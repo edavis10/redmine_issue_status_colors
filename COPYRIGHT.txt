@@ -1,4 +1,5 @@
-redmine_issue_status_colors is a plugin that Adds extra css statuses to issues
+redmine_issue_status_colors is a plugin that Adds extra css classes
+for the issue status.
 
 Copyright (C) 2010 Eric Davis
 
