@@ -10,3 +10,12 @@ Redmine::Plugin.register :redmine_issue_status_colors do
 
   requires_redmine :version_or_higher => '0.9.0'
 end
+
+require 'dispatcher'
+Dispatcher.to_prepare :redmine_issue_status_colors do
+
+  require_dependency 'issue'
+  unless Issue.included_modules.include?(RedmineIssueStatusColors::Patches::IssuePatch)
+    Issue.send(:include, RedmineIssueStatusColors::Patches::IssuePatch)
+  end
+end
